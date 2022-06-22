@@ -1,7 +1,17 @@
 import { BrowserRouter, Navigate, NavLink } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-import { FormikAbstraction, FormikBasicPage, FormikComponents, FormikYupPage, RegisterPage } from "../03-forms/pages";
+import {
+    FormikAbstraction,
+    FormikBasicPage,
+    FormikComponents,
+    FormikYupPage,
+    RegisterFormikPage,
+    RegisterPage
+} from "../03-forms/pages";
+
+
 import logo from '../logo.svg';
+import { DynamicForm } from '../03-forms/pages/DynamicForm';
 
 export const Navigation = () => {
     return (
@@ -22,11 +32,22 @@ export const Navigation = () => {
                         <li>
                             <NavLink className={({ isActive }) => isActive ? 'nav-active' : ''} to="/formik-components">Formik Components</NavLink>
                         </li>
+
                         <li>
-                            <NavLink className={({ isActive }) => isActive ? 'nav-active' : ''} to="/formik-abtractation">Formik Abtractation</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? 'nav-active' : ''} to="/formik-basic">Formik Basic</NavLink>
                         </li>
-                        <li><NavLink className={({ isActive }) => isActive ? 'nav-active' : ''} to="/formik-basic">Formik Basic</NavLink></li>
-                        <li><NavLink className={({ isActive }) => isActive ? 'nav-active' : ''} to="/users">Users</NavLink></li>
+                        <li>
+                            <NavLink className={({ isActive }) => isActive ? 'nav-active' : ''} to="/formik-register">Register Formik</NavLink>
+                        </li>
+
+                        <li>
+                            <NavLink className={({ isActive }) => isActive ? 'nav-active' : ''} to="/formik-abstraction">Formik Abtractation</NavLink>
+                        </li>
+
+
+                        <li>
+                            <NavLink className={({ isActive }) => isActive ? 'nav-active' : ''} to="/dynamic-form">DynamicForm</NavLink>
+                        </li>
 
                     </ul>
 
@@ -39,6 +60,8 @@ export const Navigation = () => {
                     <Route path="formik-yup" element={<FormikYupPage />} />
                     <Route path="formik-components" element={<FormikComponents />} />
                     <Route path="formik-abtractation" element={<FormikAbstraction />} />
+                    <Route path="formik-register" element={<RegisterFormikPage />} />
+                    <Route path="dynamic-form" element={<DynamicForm />} />
                     <Route path="home" element={<h1>Home Page</h1>} />
 
                     <Route path="/*" element={<Navigate to="/home" replace />} />

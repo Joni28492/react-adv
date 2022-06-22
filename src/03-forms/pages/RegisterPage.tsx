@@ -9,8 +9,8 @@ export const RegisterPage = () => {
         formData, onChange, resetForm, isValidEmail,
         name, email, password1, password2
     } = useForm({
-        name: 'Joni',
-        email: 'algo@algo.com',
+        name: '',
+        email: '',
         password1: '',
         password2: '',
     })
